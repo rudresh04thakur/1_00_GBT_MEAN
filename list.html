@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>list Style</title>
+    <style>
+        .list {
+            list-style: none;
+            float: right;
+        }
+
+        .list>li {
+            display: inline;
+            padding: 10px;
+            background-color: red;
+            border-radius: 10px;
+        }
+
+        .list>li>a {
+            text-decoration: none;
+            color: yellow
+        }
+
+        .clearfix {
+            clear: both;
+        }
+        .table tr,.table tr td{
+            border: 2px solid rgb(0, 0, 0);
+        }
+        .table{
+            border-spacing: 0px;
+            
+        }
+        .table tr:nth-child(even){
+            background-color: red
+        }
+        thead{
+            text-align: center;
+            background-color: silver; 
+            font-weight: bold;
+        }
+        input {
+            display: block;
+            background-color: aqua;
+            border: 0px;
+            margin: 5px;
+            border-radius: 5px;
+            line-height: 2;
+            background-repeat: no-repeat;
+            background-position: 10px;
+            padding-left: 30px;
+        }
+        button{
+            border: 0px;
+            border-radius: 5px;
+            padding: 10px;
+            color: white;
+            font-weight: bold
+        }
+        input#email{
+            background-image: url('./email.png');
+        }
+
+        input#mobile{
+            background-image: url('./web.png');
+        }
+
+        input#password{
+            background-image: url('./twitter.png');
+        }
+        button#submit{
+            background-color: green;
+        }
+
+        button#reset{
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="list">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Gallery</a></li>
+    </ul>
+    <div class="clearfix"></div>
+    <hr>
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Email</td>
+                <td>Password</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Gopal</td>
+                <td>gopal04thakur@gail.com</td>
+                <td>8983939245</td>
+            </tr>
+            <tr>
+                <td>Gopal</td>
+                <td>gopal04thakur@gail.com</td>
+                <td>8983939245</td>
+            </tr>
+            <tr>
+                <td>Gopal</td>
+                <td>gopal04thakur@gail.com</td>
+                <td>8983939245</td>
+            </tr>
+            <tr>
+                <td>Gopal</td>
+                <td>gopal04thakur@gail.com</td>
+                <td>8983939245</td>
+            </tr>
+        </tbody>
+
+        
+    </table>
+    <form>
+        <input id="email" name="email" placeholder="Email" />
+        <input id="password" name="password" placeholder="Password" />
+        <input id="mobile" name="mobile" placeholder="Mobile" />
+        <button type="submit" id="submit">Register</button>
+        <button type="reset" id="reset">Cancel</button>
+    </form>
+</body>
+
+</html>

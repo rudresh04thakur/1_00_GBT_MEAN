@@ -1,0 +1,8 @@
+/*@import url('./style2.css');*/
+@font-face{
+    font-family: "Aakriti";
+    src: url("./Aakriti.ttf");
+}
+body{
+    background: url("./bg.jpg")
+}

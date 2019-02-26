@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Accordian</title>
+    <style>
+        .read {
+            display: none;
+        }
+
+        .accordian {
+            border: 2px solid red
+        }
+
+        .button {
+            float: right;
+            border-radius: 50%;
+            padding: 10px;
+            border: 3px solid blue
+        }
+    </style>
+    <script>
+        window.onload = function () {
+console.log(document.getElementsByClassName('button'));
+            for(let element of document.getElementsByClassName('button')) {
+                
+                element.onclick = function () {
+                    element.parentNode.nextSibling.nextSibling.style.display="block";
+                }
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="accordian">
+        <span class="content">
+            <h1>Demo 1
+                <span class="button">
+                    +
+                </span>
+            </h1>
+            <p class="read">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque viverra, ex eu pharetra
+                blandit, quam
+                massa scelerisque elit, ac tempor velit erat at ex. Aenean leo nibh, tempus ac enim scelerisque,
+                facilisis posuere augue. Phasellus urna mi, finibus nec placerat eu, vulputate et dolor. Curabitur
+                accumsan est nisi, laoreet efficitur sapien suscipit vel. Sed fringilla enim ex, sit amet lacinia sapien
+                dignissim quis. Vestibulum vehicula pretium orci eget aliquet. Ut interdum eros congue, lacinia dolor
+                sed, ultricies est. </p>
+        </span>
+
+    </div>
+    <div class="accordian">
+        <span class="content">
+            <h1>Demo 2
+                <span class="button">
+                    +
+                </span>
+            </h1>
+            <p class="read">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque viverra, ex eu pharetra
+                blandit, quam
+                massa scelerisque elit, ac tempor velit erat at ex. Aenean leo nibh, tempus ac enim scelerisque,
+                facilisis posuere augue. Phasellus urna mi, finibus nec placerat eu, vulputate et dolor. Curabitur
+                accumsan est nisi, laoreet efficitur sapien suscipit vel. Sed fringilla enim ex, sit amet lacinia sapien
+                dignissim quis. Vestibulum vehicula pretium orci eget aliquet. Ut interdum eros congue, lacinia dolor
+                sed, ultricies est. </p>
+
+        </span>
+
+    </div>
+    <div class="accordian">
+        <span class="content">
+            <h1>Demo 3 <span class="button">
+                    +
+                </span></h1>
+            <p class="read">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque viverra, ex eu pharetra
+                blandit, quam
+                massa scelerisque elit, ac tempor velit erat at ex. Aenean leo nibh, tempus ac enim scelerisque,
+                facilisis posuere augue. Phasellus urna mi, finibus nec placerat eu, vulputate et dolor. Curabitur
+                accumsan est nisi, laoreet efficitur sapien suscipit vel. Sed fringilla enim ex, sit amet lacinia sapien
+                dignissim quis. Vestibulum vehicula pretium orci eget aliquet. Ut interdum eros congue, lacinia dolor
+                sed, ultricies est. </p>
+
+        </span>
+
+    </div>
+</body>
+
+</html>

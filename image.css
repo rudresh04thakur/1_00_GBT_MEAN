@@ -1,0 +1,10 @@
+body{
+    background:url("bg.jpg");
+    background-size:cover;
+    background-repeat:no-repeat;
+    color:white;
+}
+a{
+    text-decoration: none;
+    color: teal;
+}

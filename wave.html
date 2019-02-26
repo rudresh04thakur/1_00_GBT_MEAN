@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Wave</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .img>img{
+            max-height: 300px;
+            min-height: 300px;
+            width: 100vw;
+            z-index: 1;
+        }
+        .wave{
+           margin-top: -150px;
+        }
+        .wave_1,.wave_3{
+            background-color: red;
+            max-height: 300px;
+            min-height: 300px;
+            z-index: 999;
+            position: relative;
+            border-top-left-radius: 200px;
+            border-top-right-radius: 200px;
+            max-width: 428px;
+            min-width: 428px;
+           
+        }
+        .wave_2{
+            background-color: red;
+            max-height: 300px;
+            min-height: 300px;
+            max-width: 425px;
+            min-width: 425px;
+           top: 190px;
+            z-index: 99;
+            position: relative;
+            border-bottom-left-radius: 200px;
+            border-bottom-right-radius: 200px;
+            
+        }
+        .wave_1,.wave_2,.wave_3{
+            float: left;
+        }
+        .wave_2_1{
+            background-color: yellow;
+            max-height: 300px;
+            min-height: 300px;
+            max-width: 425px;
+            min-width: 425px;
+            left:429px;
+            top:270px;
+             position: absolute;
+             z-index:999 ;
+             border-bottom-left-radius: 200px;
+            border-bottom-right-radius: 200px;
+        }
+    </style>
+    </head>
+    <body>
+    <div class="img">
+        <img src="./bg.jpg">
+    </div>
+    <div class="wave">
+        <div class="wave_1">
+           
+        </div>
+        <div class="wave_2_1">
+                
+            </div>
+        <div class="wave_2">
+                
+        </div>
+        <div class="wave_3">
+               
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Menu</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .top-menu {
+            background-color: #000000a1;
+            height: 55px;
+            width: 100%;
+
+        }
+
+        .menu {
+            margin: 18px;
+            float: right;
+            margin-right: 40px;
+        }
+
+        .menu>li
+            {
+            list-style: none;
+            display: inline;
+        }
+
+       
+
+        .menu>li>a{
+            background-color: aqua;
+            padding: 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+       
+
+        .menu>li:hover {
+            background-color: cadetblue;
+        }
+
+        
+        .sub-menu{
+            display: none;
+            background-color: red;
+            margin-top: 16px;
+            position: absolute;
+            left: calc(90vw);
+            padding: 20px;
+            list-style: none;
+            border-radius: 10px
+        }
+        .sub-menu>li{
+            padding: 10px 0px;
+        }
+        .sub-menu>li:hover{
+            background-color: yellow;
+            width: 100%;
+        }
+        .toggle-menu:hover .sub-menu {
+            display: block;
+        }
+       
+        .container{
+            min-width: 100%;
+            min-height: 500px;
+            max-width: 100%;
+            max-height: 500px;
+            border: 4px double black;
+        }
+
+        .boll{
+            min-width: 50px;
+            min-height: 50px;
+            max-width: 50px;
+            max-height: 50px;
+            background-color: red;
+            border-radius: 50%;
+            top:508px;
+            left:5px;
+            position: absolute;
+            animation-name: bounce;
+            animation-duration: 10s;
+
+        }
+
+        @keyframes bounce{
+           0% {left: 5px; top: 508px}
+           10% {left: 45px; top: 400px}
+           20% {left: 90px; top: 508px; min-height: 35px}
+           30% {left: 135px; top: 350px; min-height: 50px}
+           40% {left: 175px; top: 508px; min-height: 35px}
+           50% {left: 215px; top: 300px; min-height: 50px}
+           60% {left: 255px; top: 508px; min-height: 35px}
+           70% {left: 295px; top: 250px; min-height: 50px}
+           80% {left: 335px; top: 508px; min-height: 35px}
+           90% {left: 375px; top: 200px; min-height: 50px}
+           100% {left: 405px; top: 508px; min-height: 35px}
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="top-menu">
+            <ul class="menu">
+                <li><a>Home</a></li>
+                <li><a>Gallery</a></li>
+                <li class="toggle-menu"><a>More</a>
+                    <ul class="sub-menu">
+                        <li><a>Contact</a></li>
+                        <li><a>About</a></li>
+                        <li><a>Blogs</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div style="clear:both"></div>
+    <div class="container">
+        <div class="boll"></div>
+    </div>
+</body>
+
+</html>

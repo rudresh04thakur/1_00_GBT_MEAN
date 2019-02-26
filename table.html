@@ -1,0 +1,119 @@
+<html>
+<html lan="en">
+
+<head>
+    <title>list style2</title>
+    <script>
+        window.onload = function () {
+            counter = 0;
+            document.getElementById('add').onclick = function () {
+                var tr = document.createElement('tr');
+                var td_1 = document.createElement('td');
+                var td_2 = document.createElement('td');
+                var td_3 = document.createElement('td');
+                var td_4 = document.createElement('td');
+                var btn = document.createElement('button');
+                btn.innerHTML = "-";
+                btn.addEventListener('click', function () {
+                    this.parentNode.parentNode.remove();
+                })
+
+                btn.setAttribute("class", "remove");
+                td_4.appendChild(btn);
+                td_1.innerHTML=counter++;
+                tr.appendChild(td_1);
+                tr.appendChild(td_2);
+                tr.appendChild(td_3);
+                tr.appendChild(td_4);
+                document.getElementById('tbl').appendChild(tr);
+            }
+        }
+
+
+    </script>
+    <style>
+        .list {
+            list-style: none;
+            float: right;
+        }
+
+        .list {
+            display: inline;
+            padding: 10px;
+            background-color: teal;
+            border-radius: 9px;
+        }
+
+        .list>li {
+            float: right;
+            padding: 10px;
+        }
+
+        .list>li>a {
+            text-decoration: coral;
+            color: brown;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        .table tr,
+        .table tr td {
+            border: 2px solid rgb(0, 0, 0);
+        }
+
+        .table {
+            border-spacing: 0px;
+        }
+
+        .table tr:nth-child(even) {
+            background-color: teal
+        }
+
+        thead {
+            text-align: center;
+            background-color: fuchsia;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="list">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Gallery</a></li>
+    </ul>
+    <div class="clearfix"></div>
+    <hr>
+    <button id="add">+</button>
+    <table class="table" id="tbl">
+        <thead>
+            <tr>
+                <td>Name</td>
+                <td>Email</td>
+                <td>Password</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> Gopal</td>
+                <td>gopal@gmail.com</td>
+                <td>12345</td>
+            </tr>
+            <tr>
+                <td>Gaurav</td>
+                <td>Gaurav123@gmail</td>
+                <td>0999</td>
+            </tr>
+            <tr>
+                <td>Nikhil</td>
+                <td>nikhil166@gmail.com</td>
+                <td>55555</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

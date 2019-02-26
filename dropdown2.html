@@ -1,0 +1,113 @@
+<html>
+
+<head>
+    <title>Menu2</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .top-menu {
+            background-color: rgba(0, 0, 0, 0.247);
+            position: absolute;
+            width: 100%;
+        }
+
+        .menu {
+            margin: 18px;
+            float: right;
+            margin-right: 40px;
+        }
+
+        .menu>li {
+            list-style: none;
+            display: inline;
+        }
+
+        .menu>li>a {
+            background-color: aquamarine;
+            padding: 15px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .menu>li:hover {
+            background-color: aqua;
+        }
+
+        .sub-menu {
+            display: none;
+            background-color: seagreen;
+            margin-top: 16px;
+            position: absolute;
+            left: 90vw;
+            padding: 20px;
+            list-style: none;
+            border-radius: 10px;
+        }
+        .sub-menu>li{
+            padding: 10px 0px;
+        }
+        .sub-menu>li:hover{
+            background-color: cornflowerblue;
+            width: 100%;
+
+        }
+        .toggle-menu:hover .sub-menu{
+            display: block;
+        }
+        
+        .sub-home {
+            display: none;
+            background-color: seagreen;
+            margin-top: 16px;
+            position: absolute;
+            left: 90vw;
+            padding: 20px;
+            list-style: none;
+            border-radius: 10px;
+        }
+        .sub-home>li{
+            padding: 10px 0px;
+        }
+        .sub-home>li:hover{
+            background-color: cornflowerblue;
+            width: 100%;
+
+        }
+        .toggle-home:hover .sub-home{
+            display: block;
+        }
+        
+
+
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="top-menu">
+            <li><a>Home</a></li>
+            <ul class="menu">
+                <li class="toggle-home"><a>Home</a>
+                    <ul class="sub-home">
+                        <li><a>Name</a></li>
+                        <li><a>Address</a></li>
+                    </ul>
+                </li>
+                <li><a>Gallery</a></li>
+                <li class="toggle-menu"><a>More</a>
+                    <ul class="sub-menu">
+                        <li><a>Contacts</a></li>
+                        <li><a>About</a></li>
+                        <li><a>Blogs</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+</body>
+
+</html>
