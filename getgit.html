@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Get Git Users</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <script src="./jquery.js"></script>
+    <script>
+      //inst(selector).event(funtion(){})
+      $(document).ready(function() {
+        $("#search").click(function() {
+         var name = $('#name').val();
+          // $.ajax({
+          //     type:"get",
+          //     url:"https://api.github.com/search/users?q=" + name,
+          //     success:function(res){
+          //       $('#main').html("");
+          //         res = res['items'];
+          //         res.forEach(element => {
+          //             $('#main').append(`
+          //             <div class='col-md-12' style='margin-bottom:20px; border: 2px solid black; border-radius:10px; padding: 10px'>
+          //               <div class="col-md-3">
+          //                   <img src='${element['avatar_url']}' class='img-circle' width='100' height='100' />
+          //               </div>
+          //               <div class="col-md-9">
+          //                       ${element['login']}
+          //               </div>
+          //                  `);
+          //         });
+          //     }
+          // })
+          $.get({
+              url:"https://api.github.com/search/users?q=" + name,
+              success:function(res){
+                $('#main').html("");
+                  res = res['items'];
+                  res.forEach(element => {
+                      $('#main').append(`
+                      <div class='col-md-12' style='margin-bottom:20px; border: 2px solid black; border-radius:10px; padding: 10px'>
+                        <div class="col-md-3">
+                            <img src='${element['avatar_url']}' class='img-circle' width='100' height='100' />
+                        </div>
+                        <div class="col-md-9">
+                                ${element['login']}
+                        </div>
+                           `);
+                  });
+                  //$('#main').fadeOut(2000)
+                  //$('#main').toggleClass('')
+                  $('#main').animate({marginLeft:1200},2000,function(){
+                    $('#main').hide();
+                  })
+              }
+          })
+
+
+        });
+      });
+      //inst(selector).funtion(param)
+    </script>
+    <script>
+      //   window.onload = function() {
+      //     document.getElementById("search").onclick = function() {
+      //       var name = document.getElementById("name").value;
+      //       if (XMLHttpRequest) {
+      //         var http = new XMLHttpRequest(); //1
+      //       } else {
+      //         console.log("Your Browser Not supported to AJAX");
+      //       }
+      //       http.open("get", "https://api.github.com/search/users?q=" + name); //2
+      //       http.send(); //3
+      //       http.onreadystatechange = function() {
+      //         if (http.status == 200 && http.readyState == 4) {
+      //             document.getElementById("main").innerHTML = "";
+      //             var items = JSON.parse(http.responseText)['items'];
+      //             items.forEach(element => {
+      //                 var div_1 = document.createElement('div');
+      //                 div_1.setAttribute("class","col-md-12");
+      //                 div_1.style = "margin-bottom:20px; border: 2px solid black; border-radius:10px; padding: 10px";
+      //                 var div_2 = document.createElement('div');
+      //                 div_2.setAttribute("class","col-md-3");
+      //                 var div_3 = document.createElement('div');
+      //                 div_3.setAttribute("class","col-md-9");
+      //                 div_3.innerHTML = element['login'];
+      //                 var img_1 = document.createElement('img');
+      //                 img_1.setAttribute("class","img-circle");
+      //                 img_1.width = 100;
+      //                 img_1.height = 100;
+      //                 img_1.src = element['avatar_url'];
+      //                 div_2.appendChild(img_1);
+      //                 div_1.appendChild(div_2)
+      //                 div_1.appendChild(div_3)
+      //                 document.getElementById("main").appendChild(div_1);
+      //             });
+      //           //document.getElementById("main").innerHTML = JSON.parse(http.responseText);
+      //         }
+      //       };
+      //     };
+      //   };
+    </script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">Git Search</a>
+          </div>
+          <div class="navbar-form navbar-right">
+            <div class="form-group">
+              <input
+                type="text"
+                id="name"
+                class="form-control"
+                placeholder="Search"
+              />
+            </div>
+            <button type=" button" id="search" class="btn btn-default">
+              <span class="glyphicon glyphicon-search"></span>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="container-fluid" id="main"></div>
+  </body>
+</html>

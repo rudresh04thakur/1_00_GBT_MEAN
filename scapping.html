@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Scrapping using JS</title>
+    <!-- https://www.kingsglobalbiotech.com/ -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+    <script src="./jquery.js"></script>
+    <script>
+      $(function() {
+        $.ajax({
+          type: "get",
+          url: "https://www.kingsglobalbiotech.com",
+          data: null,
+          success: function(res) {
+            var body = $(res).find("h2");
+            var target = null;
+            for (var i = 0; i <= body.length; i++) {
+              if ($(body[i]).html() == "About Us") {
+                    for(var j = 0 ; j<=$(body[i]).siblings('p').length;j++){
+                        $('body').html(($(body[i]).siblings("p")[j].innerHTML));
+                    }
+                
+              }
+            }
+          },
+          error: function(err) {
+            console.log(err);
+          }
+        });
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

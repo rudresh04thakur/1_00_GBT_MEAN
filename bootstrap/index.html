@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Bootstrap</title>
+        <link href="./css/bootstrap.css" rel="stylesheet" >
+        <script src="./js/jquery.js"></script>
+        <script src="./js/bootstrap.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <script>
+            $(function() {
+                setInterval(function() {
+                    $.get({
+                        url: 'https://www.accuweather.com/en/in/pune/204848/daily-weather-forecast/204848?day=1',
+                        success: function(res) {
+                            var day = $(res).find('#detail-day-night').find('.day')[0];
+                            var night = $(res).find('#detail-day-night').find('.night')[0];
+                            $("#day").html(day);
+                            $("#night").html(night);
+                        }
+                    });
+
+                });
+            }, 2000);
+        </script>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-sm bg-dark">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                </ul>
+                <form class="form-inline">
+                    <input class="form-control" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </nav>
+        </header>
+        <div class="carousel slide" id="mySlider" data-ride="carousel">
+            <ul class="carousel-indicators">
+                <li data-target="mySlider" data-slide-to="0" class="active"></li>
+                <li data-target="mySlider" data-slide-to="1"></li> 
+                <li data-target="mySlider" data-slide-to="2"></li>
+            </ul>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./images/1.jpg" />
+                </div>
+                <div class="carousel-item">
+                    <img src="./images/2.jpg" />
+                </div><div class="carousel-item">
+                    <img src="./images/3.jpg" />
+                </div>
+            </div>
+            <a href="#mySlider" data-slide="prev" class="carousel-control-prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a href="#mySlider" data-slide="next" class="carousel-control-next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-sm-12" id="day" style="background-color:aqua">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed ante eget dui tincidunt placerat non id velit. Aliquam molestie, risus ac tincidunt convallis, magna quam eleifend turpis, eu egestas nisl ipsum a lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec ex urna, vulputate eu ipsum ac, tempus eleifend purus. Cras posuere venenatis tristique. Integer vitae turpis vel quam volutpat sagittis dictum vitae mi. Nam felis nisl, efficitur faucibus pretium ac, consectetur vitae leo. Proin varius in turpis eget placerat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate ultrices libero sit amet condimentum. 
+                </div>
+                <div class="col-md-6 col-sm-12" id='night' style="background-color:gold">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sed ante eget dui tincidunt placerat non id velit. Aliquam molestie, risus ac tincidunt convallis, magna quam eleifend turpis, eu egestas nisl ipsum a lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec ex urna, vulputate eu ipsum ac, tempus eleifend purus. Cras posuere venenatis tristique. Integer vitae turpis vel quam volutpat sagittis dictum vitae mi. Nam felis nisl, efficitur faucibus pretium ac, consectetur vitae leo. Proin varius in turpis eget placerat. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vulputate ultrices libero sit amet condimentum. 
+                </div>
+            </div>
+            <div class="row">
+                <form class="form col-md-6 offset-3">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <div class="input-group">
+                            <span class="input-group-prepend">
+                                <span class="input-group-text">
+                                    <i class="fa fa-user"></i>
+                                </span>
+                            </span>
+                            <input class="form-control" type="text" placeholder="First Name" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Email</label>
+                        <input class="form-control" type="email" placeholder="Email" />
+                    </div>
+                    <div class="form-group">
+                        <label for="mobile">Mobile</label>
+                        <input class="form-control" type="text" maxlength="10" minlength="10" placeholder="Contact" />
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Password</label>
+                        <div class="input-group">
+                            <span class="input-group-prepend">
+                                 <input class="form-control" type="password" placeholder="Password" />
+                                <span class="input-group-text">
+                                    <i class="fa fa-eye"></i>
+                                </span>
+                            </span>
+                       
+                        </div>
+                    </div>
+
+                    <button class="btn btn-success">Save</button>
+                    <button class="btn btn-danger">Reset</button>
+                </form>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-12">
+            <ul class="pagination float-right">
+                <li class="page-item">
+                    <a href="" class="page-link">Prev</a>
+                </li>
+                <li class="page-item">
+                    <a href="" class="page-link">1</a>
+                </li>
+                <li class="page-item">
+                    <a href="" class="page-link">2</a>
+                </li><li class="page-item">
+                    <a href="" class="page-link">3</a>
+                </li><li class="page-item">
+                    <a href="" class="page-link">4</a>
+                </li>
+                <li class="page-item">
+                    <a href="" class="page-link">Next</a>
+                </li>
+
+            </ul>
+        </div>
+
+
+    </body>
+</html>
